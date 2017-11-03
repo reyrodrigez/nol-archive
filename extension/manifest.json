@@ -1,26 +1,23 @@
 {
-  "name": "NOL Archívum",
-  "version": "1.0.2",
+  "name": "Gothamist archives",
+  "version": "1.0.0",
   "manifest_version": 2,
-  "description": "Nincs olyan, hogy 404",
-  "homepage_url": "https://github.com/jzsfkzm/nol-archive",
+  "description": "Retrieving gothamist articles using web.archives.org",
+  "homepage_url": "https://github.com/reyrodrigez/nol-archive",
   "icons": {
     "128": "images/icons/icon128.png",
     "48": "images/icons/icon48.png",
     "16": "images/icons/icon16.png"
   },
-  "content_scripts": [{
-    "js": [
-      "script.js"
-    ],
+  "background": {
+    "scripts": ["script.js"],
+    "persistent": true,
     "matches": [
-      "*://*.nol.hu/*",
-      "*://nol.hu/*"
-    ],
-    "run_at": "document_end"
-  }],
+      "*://*.gothamist.com/*",
+      "*://gothamist.com/*"
+    ]
+  },
   "permissions": [
-    "*://*.nol.hu/*",
-    "*://nol.hu/*"
+    "<all_urls>","webRequest","webRequestBlocking"
   ]
 }
